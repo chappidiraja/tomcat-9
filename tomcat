@@ -1,0 +1,35 @@
+yum install java-1.8.0-openjdk
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.67/bin/apache-tomcat-9.0.67.tar.gz
+ls
+tar -xvf apache-tomcat-9.0.67.tar.gz
+ls
+chmod 777 apache-tomcat-9.0.67 
+ls
+cd apache-tomcat-9.0.67 
+ls
+cd webapps/
+ ls
+cd manager/
+ ls
+cd META-INF/
+  ls
+vi context.xml  
+to remove below two lines
+ <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+  allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+ cd ..
+ cd ..
+ cd ..
+ cd conf/
+ ls
+ vi tomcat-users.xml  
+ <role rolename="manager-gui"/>
+ <role rolename="manager-script"/>
+ <user username="tomcat" password="tomcat" roles="manager-gui,manager-script"/>
+ cd ..
+ ls
+cd bin
+ ls
+./startup.sh
+tomcat port number change ki use this one 
+vi server.xml
